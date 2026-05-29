@@ -44,7 +44,7 @@ function FeaturedDrop({ drop }: { drop: typeof DROPS[0] }) {
   return (
     <div style={{
       display: 'grid', gridTemplateColumns: '1fr 1fr',
-      gap: '1px', background: '#1a1a1a',
+      gap: '1px', background: '#1d1d1d',
       marginBottom: '1px',
     }}>
       {/* Cover art placeholder */}
@@ -55,10 +55,10 @@ function FeaturedDrop({ drop }: { drop: typeof DROPS[0] }) {
         position: 'relative', overflow: 'hidden',
       }}>
         <svg viewBox="0 0 400 400" style={{ width: '80%', opacity: 0.15 }}>
-          <circle cx="200" cy="200" r="180" fill="none" stroke="#d4ff00" strokeWidth="1.5" />
-          <circle cx="200" cy="200" r="120" fill="none" stroke="#d4ff00" strokeWidth="1" />
-          <circle cx="200" cy="200" r="60" fill="none" stroke="#d4ff00" strokeWidth="0.5" />
-          <circle cx="200" cy="200" r="12" fill="#d4ff00" />
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#f5f5f5" strokeWidth="1.5" />
+          <circle cx="200" cy="200" r="120" fill="none" stroke="#f5f5f5" strokeWidth="1" />
+          <circle cx="200" cy="200" r="60" fill="none" stroke="#f5f5f5" strokeWidth="0.5" />
+          <circle cx="200" cy="200" r="12" fill="#f5f5f5" />
           {Array.from({ length: 12 }).map((_, i) => {
             const angle = (i / 12) * Math.PI * 2
             return (
@@ -68,7 +68,7 @@ function FeaturedDrop({ drop }: { drop: typeof DROPS[0] }) {
                 y1={200 + Math.sin(angle) * 130}
                 x2={200 + Math.cos(angle) * 170}
                 y2={200 + Math.sin(angle) * 170}
-                stroke="#d4ff00"
+                stroke="#f5f5f5"
                 strokeWidth="1"
               />
             )
@@ -110,18 +110,18 @@ function FeaturedDrop({ drop }: { drop: typeof DROPS[0] }) {
             <button
               key={platform}
               style={{
-                background: 'transparent', border: '1px solid #2a2a2a',
+                background: 'transparent', border: '1px solid #202020',
                 color: 'var(--cream-dim)', fontFamily: 'Inconsolata, monospace',
                 fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.12em',
                 textTransform: 'uppercase', padding: '8px 16px', cursor: 'pointer',
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--acid)'
-                e.currentTarget.style.color = 'var(--acid)'
+                e.currentTarget.style.borderColor = 'var(--cream)'
+                e.currentTarget.style.color = 'var(--cream)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#2a2a2a'
+                e.currentTarget.style.borderColor = '#202020'
                 e.currentTarget.style.color = 'var(--cream-dim)'
               }}
             >
@@ -147,8 +147,8 @@ function DropRow({ drop }: { drop: typeof DROPS[0] }) {
         flexShrink: 0,
       }}>
         <svg viewBox="0 0 80 80" width="80" height="80">
-          <circle cx="40" cy="40" r="35" fill="none" stroke="#d4ff00" strokeWidth="1" opacity="0.2" />
-          <circle cx="40" cy="40" r="6" fill="#d4ff00" opacity="0.3" />
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#f5f5f5" strokeWidth="1" opacity="0.2" />
+          <circle cx="40" cy="40" r="6" fill="#f5f5f5" opacity="0.3" />
         </svg>
       </div>
 
@@ -165,7 +165,7 @@ function DropRow({ drop }: { drop: typeof DROPS[0] }) {
         </p>
       </div>
 
-      <span style={{ color: 'var(--acid)', fontSize: '1.4rem', flexShrink: 0 }}>→</span>
+      <span style={{ color: 'var(--cream)', fontSize: '1.4rem', flexShrink: 0 }}>→</span>
     </div>
   )
 }
@@ -198,7 +198,7 @@ function DropsPage() {
       </div>
 
       {/* Rest of drops */}
-      <div className="animate-fade-up animate-fade-up-delay-3" style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#1a1a1a', marginTop: '1px' }}>
+      <div className="animate-fade-up animate-fade-up-delay-3" style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#1d1d1d', marginTop: '1px' }}>
         {rest.map(drop => (
           <DropRow key={drop.id} drop={drop} />
         ))}
@@ -207,11 +207,11 @@ function DropsPage() {
       {/* Placeholder note */}
       <div style={{
         marginTop: '60px', padding: '24px 32px',
-        border: '1px dashed #2a2a2a', background: 'var(--off-black)',
+        border: '1px dashed #202020', background: 'var(--off-black)',
         fontFamily: 'Inconsolata, monospace', fontSize: '0.8rem',
         color: 'var(--cream-dim)', lineHeight: 1.7,
       }}>
-        <strong style={{ color: 'var(--acid)' }}>PLACEHOLDER</strong> — Replace{' '}
+        <strong style={{ color: 'var(--cream)' }}>PLACEHOLDER</strong> — Replace{' '}
         <code style={{ color: 'var(--cream)' }}>DROPS</code> in{' '}
         <code style={{ color: 'var(--cream)' }}>src/routes/drops.tsx</code>{' '}
         with your actual releases. Add streaming links by updating the button hrefs.

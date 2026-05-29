@@ -29,9 +29,9 @@ function Nav() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '20px 40px',
-        borderBottom: '1px solid #1a1a1a',
-        background: 'rgba(8,8,8,0.92)',
-        backdropFilter: 'blur(8px)',
+        borderBottom: '1px solid #1d1d1d',
+        background: 'rgba(0,0,0,0.96)',
+        backdropFilter: 'blur(6px)',
       }}
     >
       {/* Logo */}
@@ -86,7 +86,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <footer style={{
-          borderTop: '1px solid #1a1a1a',
+          borderTop: '1px solid #1d1d1d',
           padding: '28px 40px',
           display: 'flex',
           justifyContent: 'space-between',

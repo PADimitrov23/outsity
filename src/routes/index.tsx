@@ -39,7 +39,7 @@ function HomePage() {
             flexDirection: 'column',
             justifyContent: 'center',
             padding: '80px 40px 80px 60px',
-            borderRight: '1px solid #1a1a1a',
+            borderRight: '1px solid #1d1d1d',
           }}
         >
           <div className="animate-fade-up animate-fade-up-delay-1">
@@ -59,7 +59,7 @@ function HomePage() {
             >
               OUT
               <br />
-              <span style={{ color: 'var(--acid)' }}>SITY</span>
+              <span style={{ color: 'var(--cream)' }}>SITY</span>
               <span className="glitch-clone font-display" style={{ fontSize: 'clamp(5rem, 12vw, 11rem)', lineHeight: 0.88, letterSpacing: '-0.02em' }}>
                 OUT<br />SITY
               </span>
@@ -91,7 +91,7 @@ function HomePage() {
               to="/drops"
               style={{
                 display: 'inline-block',
-                background: 'var(--acid)',
+                background: 'var(--cream)',
                 color: 'var(--black)',
                 fontFamily: 'Inconsolata, monospace',
                 fontWeight: 700,
@@ -102,8 +102,8 @@ function HomePage() {
                 textDecoration: 'none',
                 transition: 'transform 0.15s ease, background 0.15s ease',
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#e8ff40')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'var(--acid)')}
+              onMouseEnter={e => (e.currentTarget.style.background = '#eaeaea')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'var(--cream)')}
             >
               Latest Drops
             </Link>
@@ -123,8 +123,8 @@ function HomePage() {
                 transition: 'border-color 0.15s ease, color 0.15s ease',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--acid)'
-                e.currentTarget.style.color = 'var(--acid)'
+                e.currentTarget.style.borderColor = 'var(--cream)'
+                e.currentTarget.style.color = 'var(--cream)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = 'var(--cream-dim)'
@@ -151,30 +151,30 @@ function HomePage() {
           >
             <defs>
               <radialGradient id="grad1" cx="60%" cy="35%" r="55%">
-                <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.12" />
+                <stop offset="0%" stopColor="#f5f5f5" stopOpacity="0.12" />
                 <stop offset="100%" stopColor="#080808" stopOpacity="0" />
               </radialGradient>
               <radialGradient id="grad2" cx="30%" cy="75%" r="40%">
-                <stop offset="0%" stopColor="#ff2d2d" stopOpacity="0.08" />
+                <stop offset="0%" stopColor="#f5f5f5" stopOpacity="0.06" />
                 <stop offset="100%" stopColor="#080808" stopOpacity="0" />
               </radialGradient>
             </defs>
-            <rect width="600" height="700" fill="#111010" />
+            <rect width="600" height="700" fill="#050505" />
             <rect width="600" height="700" fill="url(#grad1)" />
             <rect width="600" height="700" fill="url(#grad2)" />
-            <g stroke="#1e1e1e" strokeWidth="1">
+            <g stroke="#242424" strokeWidth="1">
               {Array.from({ length: 30 }).map((_, i) => (
                 <line key={i} x1={i * 40 - 200} y1="0" x2={i * 40 + 300} y2="700" />
               ))}
             </g>
-            <circle cx="380" cy="280" r="220" fill="none" stroke="#d4ff00" strokeWidth="1" opacity="0.15" />
-            <circle cx="380" cy="280" r="160" fill="none" stroke="#d4ff00" strokeWidth="0.5" opacity="0.1" />
-            <circle cx="380" cy="280" r="90" fill="none" stroke="#d4ff00" strokeWidth="0.5" opacity="0.08" />
-            <line x1="380" y1="60" x2="380" y2="500" stroke="#d4ff00" strokeWidth="0.5" opacity="0.2" />
-            <line x1="160" y1="280" x2="600" y2="280" stroke="#d4ff00" strokeWidth="0.5" opacity="0.2" />
-            <rect x="40" y="580" width="80" height="80" fill="none" stroke="#d4ff00" strokeWidth="1" opacity="0.25" />
-            <rect x="55" y="595" width="50" height="50" fill="none" stroke="#d4ff00" strokeWidth="0.5" opacity="0.15" />
-            <text x="40" y="540" fontFamily="Inconsolata, monospace" fontSize="11" fill="#9e9488" letterSpacing="3" opacity="0.6">
+            <circle cx="380" cy="280" r="220" fill="none" stroke="#f5f5f5" strokeWidth="1" opacity="0.12" />
+            <circle cx="380" cy="280" r="160" fill="none" stroke="#f5f5f5" strokeWidth="0.5" opacity="0.08" />
+            <circle cx="380" cy="280" r="90" fill="none" stroke="#f5f5f5" strokeWidth="0.5" opacity="0.06" />
+            <line x1="380" y1="60" x2="380" y2="500" stroke="#f5f5f5" strokeWidth="0.5" opacity="0.14" />
+            <line x1="160" y1="280" x2="600" y2="280" stroke="#f5f5f5" strokeWidth="0.5" opacity="0.14" />
+            <rect x="40" y="580" width="80" height="80" fill="none" stroke="#f5f5f5" strokeWidth="1" opacity="0.18" />
+            <rect x="55" y="595" width="50" height="50" fill="none" stroke="#f5f5f5" strokeWidth="0.5" opacity="0.1" />
+            <text x="40" y="540" fontFamily="Inconsolata, monospace" fontSize="11" fill="#a8a8a8" letterSpacing="3" opacity="0.6">
               OUTSITY / VISUAL ID 001
             </text>
           </svg>
@@ -191,14 +191,14 @@ function HomePage() {
 
       {/* Marquee */}
       <div style={{
-        borderTop: '1px solid #1a1a1a', borderBottom: '1px solid #1a1a1a',
+        borderTop: '1px solid #1d1d1d', borderBottom: '1px solid #1d1d1d',
         overflow: 'hidden', padding: '14px 0', background: 'var(--off-black)',
       }}>
         <div className="marquee-track">
           {Array.from({ length: 8 }).map((_, i) => (
             <span key={i} className="font-display" style={{
               fontSize: '0.75rem', letterSpacing: '0.3em',
-              color: i % 2 === 0 ? 'var(--cream-dim)' : 'var(--acid)',
+              color: i % 2 === 0 ? 'var(--cream-dim)' : 'var(--cream)',
               marginRight: '60px',
             }}>
               {i % 2 === 0 ? 'OUTSITY' : '— STAY TUNED FOR 5TH OF JUNE —'}
@@ -209,7 +209,7 @@ function HomePage() {
 
       {/* Section links grid */}
       <section style={{ padding: '80px 60px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: '#1a1a1a' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: '#1d1d1d' }}>
           {[
             { label: 'Merch', to: '/merch', desc: 'Tees, hoodies, accessories — wear the sound.', num: '01' },
             { label: 'Drops', to: '/drops', desc: 'New releases, singles, and limited runs.', num: '02' },
@@ -219,7 +219,7 @@ function HomePage() {
               <div className="placeholder-card" style={{ padding: '48px 40px', minHeight: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <span className="font-mono" style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: 'var(--cream-dim)', textTransform: 'uppercase' }}>{num}</span>
-                  <span style={{ color: 'var(--acid)', fontSize: '1.2rem' }}>→</span>
+                  <span style={{ color: 'var(--cream)', fontSize: '1.2rem' }}>→</span>
                 </div>
                 <div>
                   <h2 className="font-display" style={{ fontSize: '2.5rem', letterSpacing: '-0.01em', color: 'var(--cream)', margin: '0 0 12px 0' }}>{label}</h2>

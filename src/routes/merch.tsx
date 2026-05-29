@@ -28,11 +28,11 @@ function MerchCard({ item }: { item: typeof MERCH_ITEMS[0] }) {
         overflow: 'hidden',
       }}>
         <svg viewBox="0 0 200 200" style={{ width: '60%', opacity: 0.12 }}>
-          <rect x="40" y="60" width="120" height="100" fill="none" stroke="#d4ff00" strokeWidth="2" />
-          <line x1="40" y1="60" x2="70" y2="30" stroke="#d4ff00" strokeWidth="2" />
-          <line x1="160" y1="60" x2="130" y2="30" stroke="#d4ff00" strokeWidth="2" />
-          <line x1="70" y1="30" x2="130" y2="30" stroke="#d4ff00" strokeWidth="2" />
-          <text x="100" y="120" fontFamily="Archivo Black" fontSize="14" textAnchor="middle" fill="#d4ff00">OUTSITY</text>
+          <rect x="40" y="60" width="120" height="100" fill="none" stroke="#f5f5f5" strokeWidth="2" />
+          <line x1="40" y1="60" x2="70" y2="30" stroke="#f5f5f5" strokeWidth="2" />
+          <line x1="160" y1="60" x2="130" y2="30" stroke="#f5f5f5" strokeWidth="2" />
+          <line x1="70" y1="30" x2="130" y2="30" stroke="#f5f5f5" strokeWidth="2" />
+          <text x="100" y="120" fontFamily="Archivo Black" fontSize="14" textAnchor="middle" fill="#f5f5f5">OUTSITY</text>
         </svg>
         {item.tag && (
           <div style={{ position: 'absolute', top: '12px', left: '12px' }}>
@@ -56,7 +56,7 @@ function MerchCard({ item }: { item: typeof MERCH_ITEMS[0] }) {
           <h3 className="font-display" style={{ fontSize: '1.1rem', color: 'var(--cream)', margin: 0 }}>
             {item.name}
           </h3>
-          <span className="font-mono" style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--acid)' }}>
+          <span className="font-mono" style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--cream)' }}>
             {item.price}
           </span>
         </div>
@@ -65,7 +65,7 @@ function MerchCard({ item }: { item: typeof MERCH_ITEMS[0] }) {
             marginTop: '16px',
             width: '100%',
             background: 'transparent',
-            border: '1px solid #2a2a2a',
+            border: '1px solid #202020',
             color: 'var(--cream-dim)',
             fontFamily: 'Inconsolata, monospace',
             fontWeight: 700,
@@ -77,11 +77,11 @@ function MerchCard({ item }: { item: typeof MERCH_ITEMS[0] }) {
             transition: 'border-color 0.2s ease, color 0.2s ease',
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.borderColor = 'var(--acid)'
-            e.currentTarget.style.color = 'var(--acid)'
+            e.currentTarget.style.borderColor = 'var(--cream)'
+            e.currentTarget.style.color = 'var(--cream)'
           }}
           onMouseLeave={e => {
-            e.currentTarget.style.borderColor = '#2a2a2a'
+            e.currentTarget.style.borderColor = '#202020'
             e.currentTarget.style.color = 'var(--cream-dim)'
           }}
         >
@@ -113,7 +113,7 @@ function MerchPage() {
       </div>
 
       {/* Grid */}
-      <div className="animate-fade-up animate-fade-up-delay-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1px', background: '#1a1a1a' }}>
+      <div className="animate-fade-up animate-fade-up-delay-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1px', background: '#1d1d1d' }}>
         {MERCH_ITEMS.map(item => (
           <MerchCard key={item.id} item={item} />
         ))}
@@ -122,11 +122,11 @@ function MerchPage() {
       {/* Placeholder note */}
       <div style={{
         marginTop: '60px', padding: '24px 32px',
-        border: '1px dashed #2a2a2a', background: 'var(--off-black)',
+        border: '1px dashed #202020', background: 'var(--off-black)',
         fontFamily: 'Inconsolata, monospace', fontSize: '0.8rem',
         color: 'var(--cream-dim)', lineHeight: 1.7,
       }}>
-        <strong style={{ color: 'var(--acid)' }}>PLACEHOLDER</strong> — Replace{' '}
+        <strong style={{ color: 'var(--cream)' }}>PLACEHOLDER</strong> — Replace{' '}
         <code style={{ color: 'var(--cream)' }}>MERCH_ITEMS</code> in{' '}
         <code style={{ color: 'var(--cream)' }}>src/routes/merch.tsx</code>{' '}
         with your actual products, prices, and images.

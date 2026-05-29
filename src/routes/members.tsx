@@ -9,52 +9,49 @@ const MEMBERS = [
   {
     id: 1,
     name: 'Member Name',
-    role: 'Vocals / Guitar',
+    accent: '#f5f5f5',
     bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
     initials: 'MN',
-    accent: '#d4ff00',
+    accent: '#f5f5f5',
   },
   {
     id: 2,
     name: 'Member Name',
-    role: 'Bass',
+    accent: '#f5f5f5',
     bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
     initials: 'MN',
-    accent: '#ff2d2d',
+    accent: '#f5f5f5',
   },
   {
     id: 3,
     name: 'Member Name',
-    role: 'Drums',
+    accent: '#f5f5f5',
     bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
     initials: 'MN',
-    accent: '#d4ff00',
+    accent: '#f5f5f5',
   },
   {
     id: 4,
     name: 'Member Name',
     role: 'Keys / Synth',
     bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
-    initials: 'MN',
-    accent: '#ff2d2d',
+        role: 'Vocals / Guitar',
+    accent: '#f5f5f5',
   },
-]
 
 function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: number }) {
   const isOffset = index % 2 === 1
 
-  return (
+        role: 'Bass',
     <div
       className="placeholder-card animate-fade-up"
-      style={{
         animationDelay: `${0.1 + index * 0.1}s`,
         opacity: 0,
         display: 'grid',
         gridTemplateColumns: isOffset ? '1fr auto' : 'auto 1fr',
-        gap: '0',
+        role: 'Drums',
       }}
     >
-      {/* Photo placeholder (conditionally placed) */}
       {!isOffset && (
         <PhotoBlock member={member} />
       )}
@@ -90,11 +87,11 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
 
         {/* Social placeholders */}
         <div style={{ marginTop: '32px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-          {['Instagram', 'Twitter', 'Spotify'].map(social => (
-            <button
+                e.currentTarget.style.borderColor = 'var(--cream)'
+                e.currentTarget.style.color = 'var(--cream)'
               key={social}
               style={{
-                background: 'transparent', border: '1px solid #2a2a2a',
+                e.currentTarget.style.borderColor = '#202020'
                 color: 'var(--cream-dim)', fontFamily: 'Inconsolata, monospace',
                 fontWeight: 700, fontSize: '0.65rem', letterSpacing: '0.15em',
                 textTransform: 'uppercase', padding: '7px 14px', cursor: 'pointer',
@@ -105,7 +102,7 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
                 e.currentTarget.style.color = member.accent
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#2a2a2a'
+                e.currentTarget.style.borderColor = '#202020'
                 e.currentTarget.style.color = 'var(--cream-dim)'
               }}
             >
@@ -114,7 +111,7 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
           ))}
         </div>
       </div>
-
+      background: '#050505', borderLeft: '1px solid #1d1d1d', borderRight: '1px solid #1d1d1d',
       {isOffset && (
         <PhotoBlock member={member} />
       )}
@@ -122,11 +119,11 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
   )
 }
 
-function PhotoBlock({ member }: { member: typeof MEMBERS[0] }) {
+            <stop offset="0%" stopColor="#f5f5f5" stopOpacity="0.15" />
   return (
     <div style={{
       width: '220px', flexShrink: 0,
-      background: '#111010', borderLeft: '1px solid #1a1a1a', borderRight: '1px solid #1a1a1a',
+      background: '#050505', borderLeft: '1px solid #1d1d1d', borderRight: '1px solid #1d1d1d',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
       position: 'relative', overflow: 'hidden', minHeight: '280px',
     }}>
@@ -135,8 +132,8 @@ function PhotoBlock({ member }: { member: typeof MEMBERS[0] }) {
         <defs>
           <radialGradient id={`ag${member.id}`} cx="50%" cy="40%" r="50%">
             <stop offset="0%" stopColor={member.accent} stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#111010" stopOpacity="0" />
-          </radialGradient>
+            <stop offset="100%" stopColor="#050505" stopOpacity="0" />
+          PHOTO HERE
         </defs>
         <rect width="180" height="220" fill={`url(#ag${member.id})`} />
         {/* Head */}
@@ -147,7 +144,7 @@ function PhotoBlock({ member }: { member: typeof MEMBERS[0] }) {
         <text x="90" y="78" fontFamily="Archivo Black" fontSize="22" textAnchor="middle" fill={member.accent} opacity="0.6">
           {member.initials}
         </text>
-        <text x="90" y="210" fontFamily="Inconsolata, monospace" fontSize="9" textAnchor="middle" fill="#9e9488" letterSpacing="2" opacity="0.6">
+        <text x="90" y="210" fontFamily="Inconsolata, monospace" fontSize="9" textAnchor="middle" fill="#a8a8a8" letterSpacing="2" opacity="0.6">
           PHOTO HERE
         </text>
       </svg>
@@ -176,7 +173,7 @@ function MembersPage() {
       </div>
 
       {/* Members */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#1a1a1a' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#1d1d1d' }}>
         {MEMBERS.map((member, i) => (
           <MemberCard key={member.id} member={member} index={i} />
         ))}
@@ -185,11 +182,11 @@ function MembersPage() {
       {/* Placeholder note */}
       <div style={{
         marginTop: '60px', padding: '24px 32px',
-        border: '1px dashed #2a2a2a', background: 'var(--off-black)',
+        border: '1px dashed #202020', background: 'var(--off-black)',
         fontFamily: 'Inconsolata, monospace', fontSize: '0.8rem',
         color: 'var(--cream-dim)', lineHeight: 1.7,
       }}>
-        <strong style={{ color: 'var(--acid)' }}>PLACEHOLDER</strong> — Replace{' '}
+        <strong style={{ color: 'var(--cream)' }}>PLACEHOLDER</strong> — Replace{' '}
         <code style={{ color: 'var(--cream)' }}>MEMBERS</code> in{' '}
         <code style={{ color: 'var(--cream)' }}>src/routes/members.tsx</code>{' '}
         with your actual band members, roles, bios, and social links. Swap the{' '}
