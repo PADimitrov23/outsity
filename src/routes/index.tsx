@@ -7,6 +7,21 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   return (
     <div style={{ overflow: 'hidden' }}>
+      <iframe
+        src="/googled6de8761a460b24b.html"
+        title="Google site verification"
+        aria-hidden="true"
+        tabIndex={-1}
+        style={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          border: 0,
+          opacity: 0,
+          pointerEvents: 'none',
+          left: '-9999px',
+        }}
+      />
 
       {/* Hero */}
       <section
