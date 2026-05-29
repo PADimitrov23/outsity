@@ -186,7 +186,7 @@ function HomePage() {
               color: i % 2 === 0 ? 'var(--cream-dim)' : 'var(--acid)',
               marginRight: '60px',
             }}>
-              {i % 2 === 0 ? 'OUTSITY' : '— NEW DROPS AVAILABLE —'}
+              {i % 2 === 0 ? 'OUTSITY' : '— STAY TUNED FOR 5TH OF JUNE —'}
             </span>
           ))}
         </div>
