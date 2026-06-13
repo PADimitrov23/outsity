@@ -59,6 +59,7 @@ function Nav() {
         {[
           { label: 'Merch', to: '/merch' },
           { label: 'Drops', to: '/drops' },
+          { label: 'Gallery', to: '/gallery' },
           { label: 'Members', to: '/members' },
         ].map(({ label, to }) => (
           <Link

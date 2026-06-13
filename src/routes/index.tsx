@@ -43,12 +43,12 @@ function HomePage() {
           }}
         >
           <div className="animate-fade-up animate-fade-up-delay-1">
-            <span className="tag">Est. 2024</span>
+            <span className="tag">Est. 2025</span>
           </div>
 
           <div className="animate-fade-up animate-fade-up-delay-2" style={{ marginTop: '32px' }}>
             <h1
-              className="font-display glitch-parent"
+              className="glitch-parent"
               style={{
                 fontSize: 'clamp(5rem, 12vw, 11rem)',
                 lineHeight: 0.88,
@@ -57,11 +57,12 @@ function HomePage() {
                 color: 'var(--cream)',
               }}
             >
-              OUT
-              <br />
-              <span style={{ color: 'var(--cream)' }}>SITY</span>
-              <span className="glitch-clone font-display" style={{ fontSize: 'clamp(5rem, 12vw, 11rem)', lineHeight: 0.88, letterSpacing: '-0.02em' }}>
-                OUT<br />SITY
+              <span className="font-display" style={{ fontSize: '0.38em', letterSpacing: '0.08em', display: 'block', marginBottom: '0.05em' }}>
+                Hi, we are
+              </span>
+              <span className="font-bebas" style={{ color: 'var(--cream)', fontWeight: 800 }}>OUTSITY</span>
+              <span className="glitch-clone font-bebas" style={{ fontSize: 'clamp(5rem, 12vw, 11rem)', lineHeight: 0.88, letterSpacing: '-0.02em', fontWeight: 800 }}>
+                OUTSITY
               </span>
             </h1>
           </div>
@@ -78,8 +79,7 @@ function HomePage() {
                 maxWidth: '380px',
               }}
             >
-              {/* PLACEHOLDER: Replace with your band bio / tagline */}
-              Your band description goes here. Something raw, honest, and unforgettable. Tell the world what Outsity sounds like.
+              Chuds with a dream to become even more mediocre. Hailing from the outskirts of Meden Rudnik.
             </p>
           </div>
 
@@ -201,7 +201,7 @@ function HomePage() {
               color: i % 2 === 0 ? 'var(--cream-dim)' : 'var(--cream)',
               marginRight: '60px',
             }}>
-              {i % 2 === 0 ? 'OUTSITY' : '— STAY TUNED FOR 5TH OF JUNE —'}
+              {i % 2 === 0 ? 'OUTSITY' : '—THE OUTSKIRTS YEARN FOR US—'}
             </span>
           ))}
         </div>
@@ -209,11 +209,12 @@ function HomePage() {
 
       {/* Section links grid */}
       <section style={{ padding: '80px 60px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: '#1d1d1d' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: '#1d1d1d' }}>
           {[
             { label: 'Merch', to: '/merch', desc: 'Tees, hoodies, accessories — wear the sound.', num: '01' },
             { label: 'Drops', to: '/drops', desc: 'New releases, singles, and limited runs.', num: '02' },
-            { label: 'Members', to: '/members', desc: 'The people behind the noise.', num: '03' },
+            { label: 'Gallery', to: '/gallery', desc: 'Visual journey through Outsity\'s world.', num: '03' },
+            { label: 'Members', to: '/members', desc: 'The people behind the noise.', num: '04' },
           ].map(({ label, to, desc, num }) => (
             <Link key={to} to={to} style={{ textDecoration: 'none' }}>
               <div className="placeholder-card" style={{ padding: '48px 40px', minHeight: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

@@ -4,52 +4,65 @@ export const Route = createFileRoute('/members')({
   component: MembersPage,
 })
 
-// PLACEHOLDER: Replace with your actual band members
 const MEMBERS = [
   {
     id: 1,
-    name: 'Member Name',
+    name: 'Ameliia Dorosh',
+    role: 'Vocals / Bad Jokes',
     accent: '#f5f5f5',
-    bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
-    initials: 'MN',
-    accent: '#f5f5f5',
+    bio: 'Origin: Ukraine (Mariopol). Influences: 90s alt, "Funny and original" friends, and the need to drop unfunny jokes in between convos.',
+    initials: 'AD',
+    instagram: 'https://www.instagram.com/4m3liia.r4t/',
   },
   {
     id: 2,
-    name: 'Member Name',
+    name: 'Dimitar Meshkov',
+    role: 'Bass',
     accent: '#f5f5f5',
-    bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
-    initials: 'MN',
-    accent: '#f5f5f5',
+    bio: 'Origin: True Bulgarian Chadlite. Influences: The deep thump of the Candy-Apple-Squire-Bass™, and the unexplainable urge to binge soy milk all the time.',
+    initials: 'DM',
+    instagram: 'https://www.instagram.com/m3shkovv/',
   },
   {
     id: 3,
-    name: 'Member Name',
+    name: 'Bozhidar Stoqnov',
+    role: 'Drums',
     accent: '#f5f5f5',
-    bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
-    initials: 'MN',
-    accent: '#f5f5f5',
+    bio: 'Origin: Bulgaria, Meden Rudnik (The outskirts). Influences: The relentless beat of the drums, and the desire to create chaos in the best way possible with his insane charisma.',
+    initials: 'BS',
+    instagram: 'https://www.instagram.com/_bo6kata_/',
   },
   {
     id: 4,
-    name: 'Member Name',
-    role: 'Keys / Synth',
-    bio: 'Replace this with a short bio for this member. Where are they from? What influences them? What do they bring to Outsity?',
-        role: 'Vocals / Guitar',
+    name: 'Kristian Andreev',
+    role: 'Lead/Rhythm Guitar',
+    bio: 'Origin: Bulgaria, City: Unimportant. Influences: The constant need to play useless riffs instead of listening to his bandmates and being always confused.',
     accent: '#f5f5f5',
+    initials: 'KA',
+    instagram: 'https://www.instagram.com/wointrs/',
   },
+  {
+    id: 5,
+    name: 'Petar Dimitrov',
+    role: 'Lead/Rhythm Guitar',
+    bio: 'Origin: Bulgaria, City: Sarafovo (Tuffest outskirts). Influences: The coolest of them all!',
+    accent: '#f5f5f5',
+    initials: 'PD',
+    instagram: 'https://www.instagram.com/lildzzxx/',
+  },
+]
 
 function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: number }) {
   const isOffset = index % 2 === 1
 
-        role: 'Bass',
+  return (
     <div
       className="placeholder-card animate-fade-up"
+      style={{
         animationDelay: `${0.1 + index * 0.1}s`,
         opacity: 0,
         display: 'grid',
         gridTemplateColumns: isOffset ? '1fr auto' : 'auto 1fr',
-        role: 'Drums',
       }}
     >
       {!isOffset && (
@@ -87,31 +100,31 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
 
         {/* Social placeholders */}
         <div style={{ marginTop: '32px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                e.currentTarget.style.borderColor = 'var(--cream)'
-                e.currentTarget.style.color = 'var(--cream)'
-              key={social}
-              style={{
-                e.currentTarget.style.borderColor = '#202020'
-                color: 'var(--cream-dim)', fontFamily: 'Inconsolata, monospace',
-                fontWeight: 700, fontSize: '0.65rem', letterSpacing: '0.15em',
-                textTransform: 'uppercase', padding: '7px 14px', cursor: 'pointer',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = member.accent
-                e.currentTarget.style.color = member.accent
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#202020'
-                e.currentTarget.style.color = 'var(--cream-dim)'
-              }}
-            >
-              {social}
-            </button>
-          ))}
+          {/* Only show Instagram link */}
+          <a
+            href={member.instagram || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--cream-dim)', fontFamily: 'Inconsolata, monospace',
+              fontWeight: 700, fontSize: '0.65rem', letterSpacing: '0.15em',
+              textTransform: 'uppercase', padding: '7px 14px', cursor: 'pointer',
+              transition: 'all 0.2s ease', border: '1px solid #202020', background: 'transparent', textDecoration: 'none',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.borderColor = member.accent
+              (e.currentTarget as HTMLElement).style.color = member.accent
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.borderColor = '#202020'
+              (e.currentTarget as HTMLElement).style.color = 'var(--cream-dim)'
+            }}
+          >
+            Instagram
+          </a>
         </div>
       </div>
-      background: '#050505', borderLeft: '1px solid #1d1d1d', borderRight: '1px solid #1d1d1d',
+
       {isOffset && (
         <PhotoBlock member={member} />
       )}
@@ -119,7 +132,7 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
   )
 }
 
-            <stop offset="0%" stopColor="#f5f5f5" stopOpacity="0.15" />
+function PhotoBlock({ member }: { member: typeof MEMBERS[0] }) {
   return (
     <div style={{
       width: '220px', flexShrink: 0,
@@ -133,7 +146,7 @@ function MemberCard({ member, index }: { member: typeof MEMBERS[0]; index: numbe
           <radialGradient id={`ag${member.id}`} cx="50%" cy="40%" r="50%">
             <stop offset="0%" stopColor={member.accent} stopOpacity="0.15" />
             <stop offset="100%" stopColor="#050505" stopOpacity="0" />
-          PHOTO HERE
+          </radialGradient>
         </defs>
         <rect width="180" height="220" fill={`url(#ag${member.id})`} />
         {/* Head */}
@@ -166,7 +179,7 @@ function MembersPage() {
           </div>
           <p className="font-mono" style={{ fontSize: '0.85rem', color: 'var(--cream-dim)', maxWidth: '320px', lineHeight: 1.7, margin: 0 }}>
             {/* PLACEHOLDER: Update this */}
-            The people who make Outsity what it is. Four voices, one sound.
+            The people who make Outsity what it is. Five voices, one sound.
           </p>
         </div>
         <div className="acid-line" style={{ marginTop: '32px' }} />
@@ -186,11 +199,8 @@ function MembersPage() {
         fontFamily: 'Inconsolata, monospace', fontSize: '0.8rem',
         color: 'var(--cream-dim)', lineHeight: 1.7,
       }}>
-        <strong style={{ color: 'var(--cream)' }}>PLACEHOLDER</strong> — Replace{' '}
-        <code style={{ color: 'var(--cream)' }}>MEMBERS</code> in{' '}
-        <code style={{ color: 'var(--cream)' }}>src/routes/members.tsx</code>{' '}
-        with your actual band members, roles, bios, and social links. Swap the{' '}
-        <code style={{ color: 'var(--cream)' }}>PhotoBlock</code> SVG with real member photos.
+        <strong style={{ color: 'var(--cream)' }}>For the fans</strong> — {' '}
+        This whole thing was made possible by listeners, fans and fellow members which invested time, money and effort into making it possible, this site is dedicated to all of them{' '}
       </div>
     </div>
   )
